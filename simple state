@@ -1,0 +1,292 @@
+
+import { Link, Outlet } from "react-router-dom";
+
+function Products() {
+    return (
+        <div>
+            <h1>🛒 Products Page</h1>
+
+            <nav>
+                <Link to="electronics">Electronics</Link> |
+                <Link to="clothing">Clothing</Link> |
+                <Link to="furniture">Furniture</Link>
+            </nav>
+            <hr />
+
+            <Outlet />
+        </div>
+    );
+}
+
+export default Products;
+
+
+
+
+
+
+// import { Routes, Route } from "react-router-dom";
+
+// import Clothing from "./products/Clothing";
+// import Electronics from "./products/Electronics";
+// import Furniture from "./products/Furniture";
+// import Products from "./products/Products";
+
+
+
+// function App() {
+//   return (
+
+//     <Routes>
+//       {/* <Route path="/" element={<Products />}> */}
+//         <Route path="/products" element={<Products />} >
+
+//         <Route path="electronics" element={<Electronics />} />
+//         <Route path="clothing" element={<Clothing />} />
+//         <Route path="furniture" element={<Furniture />} />
+//       </Route>
+//     </Routes>
+    
+
+//   );
+// }
+
+// export default App
+
+
+//welcome msg
+// function WelcomeMessage({ name, language }) {
+//   return (
+//     <h3>
+//       {language === "fr" ? "Bonjour" : "Hello"}, {name}!
+//     </h3>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <div>
+//       <WelcomeMessage name="Alice" language="en" />
+//       <WelcomeMessage name="Chloe" language="fr" />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+// set count
+// import { useState } from "react";
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+
+//       <button onClick={() => count < 10 && setCount(count + 1)}>
+//         +
+//       </button>
+
+//       <button onClick={() => count > 0 && setCount(count - 1)}>
+//         -
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// Disable button--
+// import { useState } from "react";
+
+// function App() {
+//   const [disabled, setDisabled] = useState(false);
+
+//   return (
+//     <div>
+//       <button 
+//         onClick={() => setDisabled(true)} 
+//         disabled={disabled}
+//       >
+//         Click Me
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+//dropdown selection
+// import { useState } from "react";
+
+// function App() {
+//   const [techs] = useState(["HTML", "CSS", "JavaScript", "React"]);
+//   const [selected, setSelected] = useState("");
+
+//   return (
+//     <div>
+//       <h3>Select Technology:</h3>
+
+//       <select onChange={(e) => setSelected(e.target.value)}>
+//         <option value="">--Select--</option>
+
+//         {techs.map((tech, index) => (
+//           <option key={index} value={tech}>
+//             {tech}
+//           </option>
+//         ))}
+//       </select>
+
+//       <p>You selected: {selected}</p>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+// color bg change
+// import React from 'react';
+// import { useState } from 'react'
+
+// function App() {
+  
+//   let [color,setColor ] = useState("black")
+  
+//   let changeBGC = () =>{
+//     let r = Math.floor(Math.random()*256)
+//     let g = Math.floor(Math.random()*256)
+//     let b = Math.floor(Math.random()*256)
+//     setColor(`rgb(${r},${g},${b})`)
+    
+//   }
+  
+//   return (
+//     <div >
+//         <p style={{backgroundColor:color , color:"white"}}>Hello World</p>
+//         <button onClick={changeBGC}>Change BGC</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//password show
+// import { useState } from "react";
+
+// export default function App() {
+//   const [show, setShow] = useState(false);
+
+//   return (
+//     <div>
+//       <h1>Password Field</h1>
+
+//       <input
+//         type={show ? "text" : "password"}
+//         placeholder="Enter password"
+//       />
+
+//       <br /><br />
+
+//       <button onClick={() => setShow(!show)}>
+//         {show ? "Hide" : "Show"}
+//       </button>
+//     </div>
+//   );
+// }
+
+
+// //text show below
+// import { useState } from "react";
+
+// function App() {
+//   const [text, setText] = useState("");
+
+//   return (
+//     <div>
+//       <h1>Live Input Preview</h1>
+
+//       <input 
+//         type="text" 
+//         onChange={(e) => setText(e.target.value)} 
+//       />
+
+//       <p>You typed: {text}</p>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+//random quote generator
+// import { useState } from "react";
+
+// function App() {
+//   const quotes = [
+//     "Dream big and dare to fail.",
+//     "Stay hungry, stay foolish.",
+//     "Believe in yourself.",
+//     "Never give up.",
+//     "Success is not final."
+//   ];
+
+//   const [quote, setQuote] = useState("");
+
+//   return (
+//     <div>
+//       <h1>Random Quote Generator</h1>
+
+//       <p>{quote}</p>
+
+//       <button onClick={() => {
+//         const random = Math.floor(Math.random() * quotes.length);
+//         setQuote(quotes[random]);
+//       }}>
+//         Generate Quote
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+//character limit
+// import { useState } from "react";
+
+// function App() {
+//   const [text, setText] = useState("");
+
+//   return (
+//     <div>
+//       <h2>Character Limit (20)</h2>
+
+//       <input
+//         type="text"
+//         value={text}
+//         onChange={(e) => {
+//           if (e.target.value.length <= 20) {
+//             setText(e.target.value);
+//           }
+//         }}
+//       />
+
+//       <p>{text.length}/20</p>
+
+//       {text.length === 20 && <p>Limit reached!</p>}
+//     </div>
+//   );
+// }
+
+// export default App;
